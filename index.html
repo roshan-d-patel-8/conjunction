@@ -352,8 +352,7 @@ function render(){
   document.getElementById("rows").innerHTML = rows.map(({p,pr})=>{
     const star = pr.today ? ` <span class="tstar" title="Same site today">●</span>` : "";
     return `<tr class="${pr.today?"today-row":""}">` +
-      `<td><span class="who">${avatarHtml(p,40)}<span><span class="nm">${esc(p.display)}${star}</span>` +
-      (p.full!==p.display ? `<small>${esc(p.full)}</small>` : "") + `</span></span></td>` +
+      `<td><span class="who">${avatarHtml(p,40)}<span class="nm">${esc(p.full)}${star}</span></span></td>` +
       `<td data-l="Last together">${eventCell(pr.last, today, "last")}</td>` +
       `<td data-l="Next together">${eventCell(pr.next, today, "next")}</td>` +
       `<td data-l="Paths crossed (90d)">${cadenceBar(pr.cad, maxCad)}</td></tr>`;
